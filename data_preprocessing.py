@@ -5,9 +5,12 @@ import numpy as np
 
 def preprocess_data(original_dataset):
     preprocessed_dataset = {}
-    for user, item, rating in original_dataset:
+    '''for user, item, rating in original_dataset:
         preprocessed_dataset.setdefault(user, {})
-        preprocessed_dataset[user][item] = rating
+        preprocessed_dataset[user][item] = rating'''
+    for user, item in original_dataset:
+        preprocessed_dataset.setdefault(user, {})
+        preprocessed_dataset[user][item] = 1
     return preprocessed_dataset
 
 

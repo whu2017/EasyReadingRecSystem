@@ -23,53 +23,48 @@ max_iter = 100
 n_sample = 1000
 
 
-class RecommendResult:
-    def __init__(self, book_id, name, image_url):
-        self.book_id = book_id
-        self.name = name
-        self.image_url = image_url
-
-
-class RecommendResultList:
-    def __init__(self):
-        self.recommend_list = []
-
-
 def personalized_recommend(user, amount=n_rec_item):
+    if user not in preprocessed_dataset:
+        return []
     if len(preprocessed_dataset[user]) < 20:
         rec_list = MP_BY_RATIO.recommend(user, amount)
     else:
         rec_list = USER_CF.recommend(user, n_sim_user, amount)
-    ret_list = RecommendResultList()
+    ret_list = []
     for book in rec_list:
-        ret_list.recommend_list.append(RecommendResult(book[0], 'test', 'www.test.com'))
+        ret_list.append(book[0])
     return ret_list
 
 
 def popular_recommend(user=None, amount=n_rec_item):
     rec_list = MP.recommend(amount, user)
-    ret_list = RecommendResultList()
+    ret_list = []
     for book in rec_list:
-        ret_list.recommend_list.append(RecommendResult(book[0], 'test', 'www.test.com'))
+        ret_list.append(book[0])
     return ret_list
 
 
 def update_data():
     global preprocessed_dataset, MP, MP_BY_RATIO, USER_CF
-    dataset = []
+    dataset = set()
     item_category_map = {}
     try:
         conn = MySQLdb.connect(
-            host='localhost',
+            host='oott.me',
             port=3306,
-            user='root',
-            passwd='L0veU13112720212',
-            db='MovieLens',
+            user='master',
+            passwd='whu2017test-master',
+            db='whu2017_master',
         )
         cur = conn.cursor()
-        count = cur.execute("select `UserID`, `MovieID`, `Rating` from `Ratings`")
-        dataset = cur.fetchmany(count)
-        count = cur.execute("select `MovieID`, `Genres` from `Movies`")
+        count = cur.execute("select `user_id`, `book_info_id` from `read_record`")
+        dataset |= set(cur.fetchmany(count))
+        count = cur.execute("select `user_id`, `book_info_id` from `download_record`")
+        dataset |= set(cur.fetchmany(count))
+        count = cur.execute("select `user_id`, `book_info_id` from `buy_record`")
+        dataset |= set(cur.fetchmany(count))
+        dataset = list(dataset)
+        count = cur.execute("select `id`, `book_class_id` from `book_info`")
         for item, category in cur.fetchmany(count):
             item_category_map[item] = set(category.split('|'))
         cur.close()
