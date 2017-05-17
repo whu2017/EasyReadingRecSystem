@@ -17,7 +17,7 @@ mutex = threading.Lock()
 USER_CF = None
 MP = None
 MP_BY_RATIO = None
-preprocessed_dataset = None
+PREPROCESSED_DATASET = None
 ALL_BOOK_NOT_BEEN_READ = None
 n_sim_user = 40
 n_rec_item = 20
@@ -26,9 +26,9 @@ n_sample = 1000
 
 
 def personalized_recommend(user, amount=n_rec_item):
-    if user not in preprocessed_dataset:
+    if user not in PREPROCESSED_DATASET:
         rec_list = []
-    elif len(preprocessed_dataset[user]) < 20:
+    elif len(PREPROCESSED_DATASET[user]) < 20:
         rec_list = MP_BY_RATIO.recommend(user, amount)
     else:
         rec_list = USER_CF.recommend(user, n_sim_user, amount)
@@ -59,7 +59,7 @@ def popular_recommend(user=None, amount=n_rec_item):
 
 
 def update_data():
-    global preprocessed_dataset, MP, MP_BY_RATIO, USER_CF, ALL_BOOK_NOT_BEEN_READ
+    global PREPROCESSED_DATASET,MP, MP_BY_RATIO, USER_CF, ALL_BOOK_NOT_BEEN_READ
     dataset = set()
     item_category_map = {}
     try:
@@ -84,7 +84,10 @@ def update_data():
         count = cur.execute("select `id` from `book` where `id` not in("
                             "select distinct `book_id` from `read_record`) "
                             "and `id` not in(select distinct `book_id` from `buy_record`)")
-        ALL_BOOK_NOT_BEEN_READ = cur.fetchmany(count)
+        result = cur.fetchmany(count)
+        all_book_not_been_read = []
+        for row in result:
+            all_book_not_been_read.append(row[0])
         cur.close()
         conn.commit()
         conn.close()
@@ -100,6 +103,8 @@ def update_data():
     user_cf.calc_user_sim()
 
     mutex.acquire()
+    PREPROCESSED_DATASET = preprocessed_dataset
+    ALL_BOOK_NOT_BEEN_READ = all_book_not_been_read
     MP = mp
     MP_BY_RATIO = mp_by_ratio
     USER_CF = user_cf
