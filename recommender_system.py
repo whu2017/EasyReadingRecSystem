@@ -5,6 +5,7 @@ import MySQLdb
 import sys
 import threading
 import time
+import random
 from hier_kmeans_usercf import HieraKmeansUserCF
 from most_popular import MostPopular
 from MP_by_category_ratio import MPByCategoryRatio
@@ -17,6 +18,7 @@ USER_CF = None
 MP = None
 MP_BY_RATIO = None
 preprocessed_dataset = None
+ALL_BOOK_NOT_BEEN_READ = None
 n_sim_user = 40
 n_rec_item = 20
 max_iter = 100
@@ -25,14 +27,20 @@ n_sample = 1000
 
 def personalized_recommend(user, amount=n_rec_item):
     if user not in preprocessed_dataset:
-        return []
-    if len(preprocessed_dataset[user]) < 20:
+        rec_list = []
+    elif len(preprocessed_dataset[user]) < 20:
         rec_list = MP_BY_RATIO.recommend(user, amount)
     else:
         rec_list = USER_CF.recommend(user, n_sim_user, amount)
     ret_list = []
     for book in rec_list:
         ret_list.append(book[0])
+    if len(ret_list) < n_rec_item:
+        n = n_rec_item - len(ret_list)
+        if n > len(ALL_BOOK_NOT_BEEN_READ):
+            ret_list += ALL_BOOK_NOT_BEEN_READ
+        else:
+            ret_list += random.sample(ALL_BOOK_NOT_BEEN_READ, n)
     return ret_list
 
 
@@ -41,11 +49,17 @@ def popular_recommend(user=None, amount=n_rec_item):
     ret_list = []
     for book in rec_list:
         ret_list.append(book[0])
+    if len(ret_list) < n_rec_item:
+        n = n_rec_item - len(ret_list)
+        if n > len(ALL_BOOK_NOT_BEEN_READ):
+            ret_list += ALL_BOOK_NOT_BEEN_READ
+        else:
+            ret_list += random.sample(ALL_BOOK_NOT_BEEN_READ, n)
     return ret_list
 
 
 def update_data():
-    global preprocessed_dataset, MP, MP_BY_RATIO, USER_CF
+    global preprocessed_dataset, MP, MP_BY_RATIO, USER_CF, ALL_BOOK_NOT_BEEN_READ
     dataset = set()
     item_category_map = {}
     try:
@@ -67,6 +81,10 @@ def update_data():
             # item_category_map[item] = set(category.split('|'))
             item_category_map[item] = set()
             item_category_map[item].add(category)
+        count = cur.execute("select `id` from `book` where `id` not in("
+                            "select distinct `book_id` from `read_record`) "
+                            "and `id` not in(select distinct `book_id` from `buy_record`)")
+        ALL_BOOK_NOT_BEEN_READ = cur.fetchmany(count)
         cur.close()
         conn.commit()
         conn.close()

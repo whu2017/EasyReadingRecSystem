@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="070663ff-e4ca-4a4e-863f-7037517a2f5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommender_system.py" afterPath="$PROJECT_DIR$/recommender_system.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EasyReadingRecSystem$recommender_system.coverage" NAME="recommender_system Coverage Results" MODIFIED="1495036235526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EasyReadingRecSystem$recommender_system.coverage" NAME="recommender_system Coverage Results" MODIFIED="1495038245571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EasyReadingRecSystem$most_popular.coverage" NAME="most_popular Coverage Results" MODIFIED="1494491155177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EasyReadingRecSystem$personalized_recommend.coverage" NAME="personalized_recommend Coverage Results" MODIFIED="1494488452700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -56,7 +55,7 @@
       <file leaf-file-name="hier_kmeans_usercf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hier_kmeans_usercf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
+            <state relative-caret-position="375">
               <caret line="48" column="95" lean-forward="false" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
               <folding>
                 <element signature="e#42#53#0" expanded="true" />
@@ -65,22 +64,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recommender_system.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recommender_system.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recommender_system.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2251">
-              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state relative-caret-position="-711">
+              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="39" />
               <folding>
                 <element signature="e#42#67#0" expanded="true" />
-                <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-                <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-                <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+                <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+                <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+                <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+                <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+                <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+                <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connections.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connections.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/connections.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="519">
@@ -90,11 +92,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="most_popular.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/most_popular.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MP_by_category_ratio.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MP_by_category_ratio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            <state relative-caret-position="689">
+              <caret line="48" column="78" lean-forward="false" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -147,6 +159,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,7 +174,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -474,7 +486,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26795283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27116826" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -523,9 +535,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
           </folding>
         </state>
       </provider>
@@ -594,9 +609,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
           </folding>
         </state>
       </provider>
@@ -665,9 +683,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
           </folding>
         </state>
       </provider>
@@ -736,9 +757,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
           </folding>
         </state>
       </provider>
@@ -807,9 +831,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
           </folding>
         </state>
       </provider>
@@ -870,9 +897,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
           </folding>
         </state>
       </provider>
@@ -890,16 +920,6 @@
         <state relative-caret-position="700">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hier_kmeans_usercf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="48" column="95" lean-forward="false" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
-          <folding>
-            <element signature="e#42#53#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,40 +947,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MP_by_category_ratio.py">
+    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/connections.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="519">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recommender_system.py">
+    <entry file="file://$PROJECT_DIR$/MP_by_category_ratio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2251">
-          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="689">
+          <caret line="48" column="78" lean-forward="false" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hier_kmeans_usercf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="48" column="95" lean-forward="false" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
           <folding>
-            <element signature="e#42#67#0" expanded="true" />
-            <marker date="1495036233225" expanded="true" signature="1467:1513" ph="select `user... read_record" />
-            <marker date="1495036233225" expanded="true" signature="1590:1635" ph="select `user... buy_record" />
-            <marker date="1495036233225" expanded="true" signature="1744:1782" ph="select `id`,... book" />
+            <element signature="e#42#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/most_popular.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="850">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/connections.py">
+    <entry file="file://$PROJECT_DIR$/recommender_system.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-711">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <element signature="e#42#67#0" expanded="true" />
+            <marker date="1495038245486" expanded="true" signature="2029:2075" ph="select `user... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2152:2197" ph="select `user... buy_record" />
+            <marker date="1495038245486" expanded="true" signature="2306:2344" ph="select `id`,... book" />
+            <marker date="1495038245486" expanded="true" signature="2587:2797" ph="select `id` book" />
+            <marker date="1495038245486" expanded="true" signature="2660:2704" ph="select disti... read_record" />
+            <marker date="1495038245486" expanded="true" signature="2753:2796" ph="select disti... buy_record" />
+          </folding>
         </state>
       </provider>
     </entry>
