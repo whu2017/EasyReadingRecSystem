@@ -48,7 +48,7 @@ def update_data():
     global preprocessed_dataset, MP, MP_BY_RATIO, USER_CF
     dataset = set()
     item_category_map = {}
-    '''try:
+    try:
         conn = MySQLdb.connect(
             host='oott.me',
             port=3306,
@@ -64,34 +64,14 @@ def update_data():
         dataset = list(dataset)
         count = cur.execute("select `id`, `category_id` from `book`")
         for item, category in cur.fetchmany(count):
-            #item_category_map[item] = set(category.split('|'))
-            item_category_map[item] = set(category)
+            # item_category_map[item] = set(category.split('|'))
+            item_category_map[item] = set()
+            item_category_map[item].add(category)
         cur.close()
         conn.commit()
         conn.close()
     except Exception, e:
-        print Exception, ':', e'''
-    conn = MySQLdb.connect(
-        host='oott.me',
-        port=3306,
-        user='master',
-        passwd='whu2017test-master',
-        db='whu2017_master',
-    )
-    cur = conn.cursor()
-    count = cur.execute("select `user_id`, `book_id` from `read_record`")
-    dataset |= set(cur.fetchmany(count))
-    count = cur.execute("select `user_id`, `book_id` from `buy_record`")
-    dataset |= set(cur.fetchmany(count))
-    dataset = list(dataset)
-    count = cur.execute("select `id`, `category_id` from `book`")
-    for item, category in cur.fetchmany(count):
-        # item_category_map[item] = set(category.split('|'))
-        item_category_map[item] = set()
-        item_category_map[item].add(category)
-    cur.close()
-    conn.commit()
-    conn.close()
+        print Exception, ':', e
 
     preprocessed_dataset = data_preprocessing.preprocess_data(dataset)
     mp = MostPopular(preprocessed_dataset)
@@ -123,7 +103,7 @@ if __name__ == "__main__":
     t.setDaemon(True)
     t.start()
 
-    server = SimpleXMLRPCServer(('localhost', 45213))
+    server = SimpleXMLRPCServer(('localhost', 45213), allow_none=True)
     print 'Listening on port 45213...'
     server.register_multicall_functions()
     server.register_function(personalized_recommend, 'personalized_recommend')
