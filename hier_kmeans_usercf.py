@@ -43,11 +43,14 @@ class HieraKmeansUserCF:
     def calc_user_sim(self):
         user_category_matrix = self.__create_user_item_matrix()
 
+        # if number of users more than 'self.__n_hier_sample', than use clustering
         if len(self.__user_list) > self.__n_hier_sample:
             sample_matrix = random.sample(user_category_matrix.tolist(), self.__n_hier_sample)
+            k, centers = hierarchical_clustering.find_best_k_by_hiera_clustering(np.mat(sample_matrix))
+        # otherwise, consider all users in one clustering
         else:
-            sample_matrix = random.sample(user_category_matrix.tolist(), len(self.__user_list))
-        k, centers = hierarchical_clustering.find_best_k_by_hiera_clustering(np.mat(sample_matrix))
+            k = 1
+            centers = np.mean(user_category_matrix, axis=0)
 
         self.__user_sim_matrix = [{} for x in range(k)]
         centroids, cluster_assment = kmeans_clustering.kmeans(

@@ -27,7 +27,7 @@ n_sample = 1000
 
 def personalized_recommend(user, amount=n_rec_item):
     if user not in PREPROCESSED_DATASET:
-        rec_list = []
+        rec_list = MP.recommend(amount, None)
     elif len(PREPROCESSED_DATASET[user]) < 20:
         rec_list = MP_BY_RATIO.recommend(user, amount)
     else:

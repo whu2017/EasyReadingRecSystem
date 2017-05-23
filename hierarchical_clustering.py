@@ -41,8 +41,8 @@ def find_best_k_by_hiera_clustering(dataset):
     distances = {}
     min_dist_pair = None
     current_clustered = -1
-    best_k = 0
-    best_cluster_centers = None
+    best_k = 1
+    best_cluster_centers = cluster_centers[:]
     last_cluster_centers = None
     last_see = None
     max_see_growth = None
